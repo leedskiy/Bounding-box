@@ -15,6 +15,7 @@ public class Circle extends Shape {
         return 2 * radius * Math.PI;
     }
 
+    @Override
     public ArrayList<Double> getBoundingBox() {
         ArrayList<Double> list1 = new ArrayList<Double>();
         double x1 = x - radius;

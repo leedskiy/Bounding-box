@@ -3,7 +3,7 @@ package shape;
 import java.lang.Math;
 import java.util.ArrayList;
 
-public class Hexagon {
+public class Hexagon extends Shape{
     private double sideLength;
 
     public Hexagon(double x, double y, double sideLength) {
@@ -16,6 +16,7 @@ public class Hexagon {
         return (3 * Math.sqrt(3) * sideLength * sideLength) / 2;
     }
 
+    @Override
     public ArrayList<Double> getBoundingBox() {
         ArrayList<Double> list1 = new ArrayList<Double>();
         double x1 = x - sideLength;

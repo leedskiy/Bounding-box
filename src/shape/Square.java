@@ -2,7 +2,7 @@ package shape;
 
 import java.util.ArrayList;
 
-public class Square {
+public class Square extends Shape{
     private double sideLength;
 
     public Square(double x, double y, double sideLength) {
@@ -15,6 +15,7 @@ public class Square {
         return sideLength * sideLength;
     }
 
+    @Override
     public ArrayList<Double> getBoundingBox() {
         ArrayList<Double> list1 = new ArrayList<Double>();
         double x1 = x - sideLength/2;

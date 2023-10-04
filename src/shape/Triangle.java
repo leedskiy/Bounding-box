@@ -16,6 +16,7 @@ public class Triangle extends Shape {
         return Math.sqrt(3) / 4 * sideLength * sideLength;
     }
 
+    @Override
     public ArrayList<Double> getBoundingBox() {
         ArrayList<Double> list1 = new ArrayList<Double>();
         double x1 = x - sideLength/2;

@@ -11,5 +11,5 @@ public abstract class Shape {
     }
 
     public abstract double getArea();
-    public abstract ArrayList<Double> getBoundingBox(double x, double y);
+    public abstract ArrayList<Double> getBoundingBox();
 }
