@@ -30,4 +30,9 @@ public class Square extends Shape{
 
         return list1;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ") and side length " + sideLength;
+    }
 }

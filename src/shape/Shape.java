@@ -12,4 +12,9 @@ public abstract class Shape {
 
     public abstract double getArea();
     public abstract ArrayList<Double> getBoundingBox();
+
+    @Override
+    public String toString() {
+        return ((this.getClass()).toString()).split("[ .]")[2] + " with the center coordinate (x: " + x + ", y: " + y;
+    }
 }

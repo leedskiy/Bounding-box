@@ -30,4 +30,9 @@ public class Circle extends Shape {
 
         return list1;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ") and radius " + radius;
+    }
 }
