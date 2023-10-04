@@ -1,26 +1,27 @@
 package shape;
 
+import java.lang.Math;
 import java.util.ArrayList;
 
-public class Square {
+public class Hexagon {
     private double sideLength;
 
-    public Square(double x, double y, double sideLength) {
+    public Hexagon(double x, double y, double sideLength) {
         super(x, y);
         this.sideLength = sideLength;
     }
 
     @Override
     public double getArea() {
-        return sideLength * sideLength;
+        return (3 * Math.sqrt(3) * sideLength * sideLength) / 2;
     }
 
     public ArrayList<Double> getBoundingBox() {
         ArrayList<Double> list1 = new ArrayList<Double>();
-        double x1 = x - sideLength/2;
-        double y1 = y - sideLength/2;
-        double x2 = x + sideLength/2;
-        double y2 = x + sideLength/2;
+        double x1 = x - sideLength;
+        double y1 = y - sideLength;
+        double x2 = x + sideLength;
+        double y2 = x + sideLength;
         
         list1.add(x1);
         list1.add(y1);
@@ -30,3 +31,4 @@ public class Square {
         return list1;
     }
 }
+
