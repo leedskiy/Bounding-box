@@ -1,4 +1,5 @@
 package shape;
+import java.util.ArrayList;
 
 public abstract class Shape {
     protected double x;
@@ -10,5 +11,5 @@ public abstract class Shape {
     }
 
     public abstract double getArea();
-    public abstract boolean containsPoint(double x, double y);
+    public abstract ArrayList<Double> getBoundingBox(double x, double y);
 }
