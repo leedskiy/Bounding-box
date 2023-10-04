@@ -2,7 +2,6 @@ package shape;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.PrintWriter;
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import static java.lang.Double.parseDouble;
@@ -15,8 +14,7 @@ public class BoundingBox {
     }
 
     public void readInput(String fileName) throws WrongShapeException {
-        try(BufferedReader in = new BufferedReader(new FileReader(fileName));
-            PrintWriter pw = new PrintWriter("out.txt");)
+        try(BufferedReader in = new BufferedReader(new FileReader(fileName)))
         {
             int n = parseInt(in.readLine());
 
@@ -49,13 +47,56 @@ public class BoundingBox {
                         throw new WrongShapeException("The shape \"" + parts[0] + "\" in the input is not supported");
                 }
             }
-
-            for(Shape shape : shapes) {
-                System.out.println(shape);
-            }
         }
         catch(IOException | IllegalArgumentException e) {
             System.err.println(e);
         }
+    }
+
+    public ArrayList<Double> getCommonBoundingBox() {
+        boolean first = true;
+
+        double minX = 0;
+        double minY = 0;
+        double maxX = 0;
+        double maxY = 0;
+
+        for(Shape shape : shapes) {
+            if(first) {
+                minX = shape.getBoundingBox().get(0);
+                minY = shape.getBoundingBox().get(1);
+                maxX = shape.getBoundingBox().get(2);
+                maxY = shape.getBoundingBox().get(3);
+                first = false;
+            }
+            else {
+                if(shape.getBoundingBox().get(0) < minX) {
+                    minX = shape.getBoundingBox().get(0);
+                }
+                if(shape.getBoundingBox().get(1) < minY) {
+                    minY = shape.getBoundingBox().get(1);
+                }
+                if(shape.getBoundingBox().get(2) > maxX) {
+                    maxX = shape.getBoundingBox().get(2);
+                }
+                if(shape.getBoundingBox().get(3) > maxY) {
+                    maxY = shape.getBoundingBox().get(3);
+                }
+            }
+        }
+
+        ArrayList<Double> list1 = new ArrayList<Double>(4);
+        list1.add(minX);
+        list1.add(minY);
+        list1.add(maxX);
+        list1.add(maxX);
+        return list1;
+    }
+
+    public void printShapes() {
+        for(Shape shape : shapes) {
+            System.out.println(shape);
+        }
+        System.out.println();
     }
 }

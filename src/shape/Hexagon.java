@@ -18,7 +18,7 @@ public class Hexagon extends Shape{
 
     @Override
     public ArrayList<Double> getBoundingBox() {
-        ArrayList<Double> list1 = new ArrayList<Double>();
+        ArrayList<Double> list1 = new ArrayList<Double>(4);
         double x1 = x - sideLength;
         double y1 = y - sideLength;
         double x2 = x + sideLength;

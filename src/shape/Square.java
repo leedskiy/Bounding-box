@@ -17,7 +17,7 @@ public class Square extends Shape{
 
     @Override
     public ArrayList<Double> getBoundingBox() {
-        ArrayList<Double> list1 = new ArrayList<Double>();
+        ArrayList<Double> list1 = new ArrayList<Double>(4);
         double x1 = x - sideLength/2;
         double y1 = y - sideLength/2;
         double x2 = x + sideLength/2;

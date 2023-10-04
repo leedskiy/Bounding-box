@@ -17,7 +17,7 @@ public class Circle extends Shape {
 
     @Override
     public ArrayList<Double> getBoundingBox() {
-        ArrayList<Double> list1 = new ArrayList<Double>();
+        ArrayList<Double> list1 = new ArrayList<Double>(4);
         double x1 = x - radius;
         double y1 = y - radius;
         double x2 = x + radius;
