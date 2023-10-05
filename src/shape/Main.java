@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws WrongShapeException {
         BoundingBox bb = new BoundingBox();
-        bb.readInput("in2.txt");
+        bb.readInput("in3.txt");
 
         ArrayList<Double> cbb = new ArrayList<Double>(4);
         cbb = bb.getCommonBoundingBox();
