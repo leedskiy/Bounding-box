@@ -59,32 +59,38 @@ public class BoundingBox {
     public ArrayList<Double> getCommonBoundingBox() {
         boolean first = true;
 
+        ArrayList<Double> currBoundingBox = new ArrayList<Double>();
         double minX = 0;
         double minY = 0;
         double maxX = 0;
         double maxY = 0;
 
         for(Shape shape : shapes) {
+            currBoundingBox = shape.getBoundingBox();
+
             if(first) {
-                minX = shape.getBoundingBox().get(0);
-                minY = shape.getBoundingBox().get(1);
-                maxX = shape.getBoundingBox().get(2);
-                maxY = shape.getBoundingBox().get(3);
+                minX = currBoundingBox.get(0);
+                minY = currBoundingBox.get(1);
+                maxX = currBoundingBox.get(2);
+                maxY = currBoundingBox.get(3);
+                currBoundingBox.clear();
                 first = false;
             }
             else {
-                if(shape.getBoundingBox().get(0) < minX) {
-                    minX = shape.getBoundingBox().get(0);
+                if(currBoundingBox.get(0) < minX) {
+                    minX = currBoundingBox.get(0);
                 }
-                if(shape.getBoundingBox().get(1) < minY) {
-                    minY = shape.getBoundingBox().get(1);
+                if(currBoundingBox.get(1) < minY) {
+                    minY = currBoundingBox.get(1);
                 }
-                if(shape.getBoundingBox().get(2) > maxX) {
-                    maxX = shape.getBoundingBox().get(2);
+                if(currBoundingBox.get(2) > maxX) {
+                    maxX = currBoundingBox.get(2);
                 }
-                if(shape.getBoundingBox().get(3) > maxY) {
-                    maxY = shape.getBoundingBox().get(3);
+                if(currBoundingBox.get(3) > maxY) {
+                    maxY = currBoundingBox.get(3);
                 }
+
+                currBoundingBox.clear();
             }
         }
 
