@@ -13,6 +13,7 @@ public class Main {
         System.out.println("The bottom-left point A(" + cbb.get(0) + ", " + cbb.get(1) + ")");
         System.out.println("The top-right point B(" + cbb.get(2) + ", " + cbb.get(3) + ")");
         System.out.println("\n-------------------------------------");
+        
         System.out.println("\nAll shapes: \n");
         bb.printShapes();
     }

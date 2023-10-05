@@ -90,6 +90,7 @@ public class BoundingBox {
         list1.add(minY);
         list1.add(maxX);
         list1.add(maxX);
+        
         return list1;
     }
 
@@ -97,6 +98,7 @@ public class BoundingBox {
         for(Shape shape : shapes) {
             System.out.println(shape);
         }
+
         System.out.println();
     }
 }
