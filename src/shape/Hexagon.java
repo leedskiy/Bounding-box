@@ -19,10 +19,12 @@ public class Hexagon extends Shape{
     @Override
     public ArrayList<Double> getBoundingBox() {
         ArrayList<Double> list1 = new ArrayList<Double>(4);
-        double x1 = x - sideLength;
-        double y1 = y - sideLength;
-        double x2 = x + sideLength;
-        double y2 = x + sideLength;
+        double a = sideLength / 2;
+        double inradius = Math.sqrt(3) / 2 * a;
+        double x1 = x - a;
+        double y1 = y - inradius;
+        double x2 = x + a;
+        double y2 = y + inradius;
         
         list1.add(x1);
         list1.add(y1);

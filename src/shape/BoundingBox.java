@@ -1,4 +1,6 @@
 package shape;
+import java.text.DecimalFormat;
+import java.math.RoundingMode;  
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,6 +10,7 @@ import static java.lang.Double.parseDouble;
 
 public class BoundingBox {
     ArrayList<Shape> shapes;
+    private static final DecimalFormat df = new DecimalFormat("0.00");  
 
     public BoundingBox() {
         shapes = new ArrayList<Shape>();
@@ -86,10 +89,17 @@ public class BoundingBox {
         }
 
         ArrayList<Double> list1 = new ArrayList<Double>(4);
+
+        df.setRoundingMode(RoundingMode.DOWN);
+        minX = Double.parseDouble(df.format(minX));
+        minY = Double.parseDouble(df.format(minY));
+        maxX = Double.parseDouble(df.format(maxX));
+        maxY = Double.parseDouble(df.format(maxY));
+
         list1.add(minX);
         list1.add(minY);
         list1.add(maxX);
-        list1.add(maxX);
+        list1.add(maxY);
         
         return list1;
     }

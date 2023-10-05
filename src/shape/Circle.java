@@ -18,10 +18,11 @@ public class Circle extends Shape {
     @Override
     public ArrayList<Double> getBoundingBox() {
         ArrayList<Double> list1 = new ArrayList<Double>(4);
-        double x1 = x - radius;
-        double y1 = y - radius;
-        double x2 = x + radius;
-        double y2 = x + radius;
+        double a = radius / 2;
+        double x1 = x - a;
+        double y1 = y - a;
+        double x2 = x + a;
+        double y2 = y + a;
         
         list1.add(x1);
         list1.add(y1);

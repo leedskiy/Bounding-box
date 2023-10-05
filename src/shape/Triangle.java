@@ -19,11 +19,12 @@ public class Triangle extends Shape {
     @Override
     public ArrayList<Double> getBoundingBox() {
         ArrayList<Double> list1 = new ArrayList<Double>(4);
-        double h = (sideLength * Math.sqrt(3)) / 2;
-        double x1 = x - sideLength / 2;
+        double a = sideLength / 2;
+        double h = (a * Math.sqrt(3)) / 2;
+        double x1 = x - a / 2;
         double y1 = y - h / 2;
-        double x2 = x + sideLength / 2;
-        double y2 = x + h / 2;
+        double x2 = x + a / 2;
+        double y2 = y + h / 2; 
         
         list1.add(x1);
         list1.add(y1);
